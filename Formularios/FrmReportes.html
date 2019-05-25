@@ -1,0 +1,128 @@
+
+<form ng-hide="Frepgeneral">
+    <H1 class="display-4 font-weight-bold"  align="center"> Reportes </H1>
+    <section class="container">
+       <!-- <div class="form-group row">
+            <label for="curso" class="col-2 col-form-label">Curso</label>
+            <div class="col-3">
+                <select id="curso" name="curso" class="custom-select">
+                    <option value="rabbit">Rabbit</option>
+                    <option value="duck">Duck</option>
+                </select>
+            </div>
+            <div class="offset-lg-1">
+                <button name="submit" type="submit" class="btn btn-success">Listar</button>
+            </div>-->
+        <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+        </div>
+        <div class="card mb-3 card text-center">
+            <div class="card-header " align="center">
+                <i class="fas fa-user"></i>
+                TOTAL DE ALUMNOS TECNICO OPERADOR: <strong>{{ListadoTecnicoOperador.length}}</strong> </div>
+            <div class="card-body ">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
+                        <thead>
+                        <tr >
+                            <th>Codigo</th>
+                            <th>Nombre Completo</th>
+                            <th>Direccion</th>
+                            <th>Teléfono</th>
+                            <th>Jornada</th>
+                            <th>Horario</th>
+                        </tr>
+                        </thead>
+
+                        <tr ng-repeat="ope in ListadoTecnicoOperador">
+                            <td>{{ope.ALUMNO_ID}}</td>
+                            <td>{{ope.ALUMNO_NOMBRE1}} {{ope.ALUMNO_NOMBRE2}} {{ope.ALUMNO_NOMBRE3}} {{ope.ALUMNO_APELLIDO1}} {{ope.ALUMNO_APELLIDO2}} {{ope.ALUMNO_APELLIDO3}}</td>
+                            <td>{{ope.ALUMNO_DIRECCION}}</td>
+                            <td>{{ope.ALUMNO_TELEFONO}}</td>
+                            <td>{{ope.JORNADA_NOMBRE}}</td>
+                            <td>{{ope.HORARIO_HORARIO}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+        </div>
+        <div class="card mb-3 card text-center">
+            <div class="card-header " align="center">
+                <i class="fas fa-user"></i>
+                TOTAL DE ALUMNOS TECNICO PROGRAMADOR: <strong>{{ListadoTecnicoProgramdor.length}}</strong></div>
+            <div class="card-body ">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre Completo</th>
+                            <th>Direccion</th>
+                            <th>Teléfono</th>
+                            <th>Jornada</th>
+                            <th>Horario</th>
+                        </tr>
+                        </thead>
+
+                        <tr  ng-repeat="pro in ListadoTecnicoProgramdor">
+                            <td>{{pro.ALUMNO_ID}}</td>
+                            <td>{{pro.ALUMNO_NOMBRE1}} {{pro.ALUMNO_NOMBRE2}} {{pro.ALUMNO_NOMBRE3}} {{pro.ALUMNO_APELLIDO1}} {{pro.ALUMNO_APELLIDO2}} {{pro.ALUMNO_APELLIDO3}}</td>
+                            <td>{{pro.ALUMNO_DIRECCION}}</td>
+                            <td>{{pro.ALUMNO_TELEFONO}}</td>
+                            <td>{{pro.JORNADA_NOMBRE}}</td>
+                            <td>{{pro.HORARIO_HORARIO}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+        <div class="card mb-3 card text-center">
+            <div class="card-header " align="center">
+                <i class="fas fa-user"></i>
+                ALUMNOS RETIRADOS:  <strong>{{ListaDeAlumnosRetiradosResult.length}}</strong></div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre Completo</th>
+                            <th>Direccion</th>
+                            <th>Teléfono</th>
+                            <th>Curso</th>
+                            <th>Jornada</th>
+                            <th>Horario</th>
+                        </tr>
+                        </thead>
+
+                        <tr ng-repeat=" ret in ListaDeAlumnosRetiradosResult">
+                            <td>{{ret.ALUMNO_ID}}</td>
+                            <td>{{ret.ALUMNO_NOMBRE1}} {{ret.ALUMNO_NOMBRE2}} {{ret.ALUMNO_NOMBRE3}} {{ret.ALUMNO_APELLIDO1}} {{ret.ALUMNO_APELLIDO2}} {{ret.ALUMNO_APELLIDO3}}</td>
+                            <td>{{ret.ALUMNO_DIRECCION}} </td>
+                            <td>{{ret.ALUMNO_TELEFONO}} </td>
+                            <td>{{ret.CURSO_NOMBRE}} </td>
+                            <td>{{ret.JORNADA_NOMBRE}} </td>
+                            <td>{{ret.HORARIO_HORARIO}} </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+                  <!--  <table/>-->
+
+
+    </section>
+</form>
+

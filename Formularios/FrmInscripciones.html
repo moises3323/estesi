@@ -1,0 +1,124 @@
+<form ng-hide="Finscribir" ng-submit="InsertarAlumnos(curso.CURSO_ID,jornada.JORNADA_ID,horario.HORARIO_ID)">
+    <H1 class="display-4 font-weight-bold"  align="center"> Inscripciones </H1>
+    <section class="container">
+        <div class="form-group row ">
+
+            <label for="nombre1" class="col-2 col-form-label">Nombre1 </label>
+            <div class="col-8">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <input id="nombre1"  placeholder="Ingrese su nombre" type="text" required="required" class="form-control here" ng-model="Alumno.ALUMNO_NOMBRE1">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="nombre2" class="col-2 col-form-label">Nombre2</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <input id="nombre2" placeholder="Ingrese su nombre" type="text" class="form-control here" ng-model="Alumno.ALUMNO_NOMBRE2">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="nombre3" class="col-2 col-form-label">Nombre3</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <input id="nombre3" placeholder="Ingrese su nombre" type="text" class="form-control here" ng-model="Alumno.ALUMNO_NOMBRE3">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="apellido1" class="col-2 col-form-label">Apellido1</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <input id="apellido1"  placeholder="Ingrese su apellido" required="required" type="text" class="form-control here" ng-model="Alumno.ALUMNO_APELLIDO1">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="apellido2" class="col-2 col-form-label">Apellido2</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <input id="apellido2" placeholder="Ingrese su apellido" type="text" class="form-control here" ng-model="Alumno.ALUMNO_APELLIDO2">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="apellido3" class="col-2 col-form-label">Apellido3</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <input id="apellido3" placeholder="Ingrese su apellido"  type="text" class="form-control here" ng-model="Alumno.ALUMNO_APELLIDO3">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="fechanacimiento" class="col-2 col-form-label">Fecha de Nacimiento</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input id="fechanacimiento" placeholder="Ingrese su fecha de nacimiento"  required="required" type="date" class="form-control here" ng-model="Alumno.ALUMNO_FECHANAC">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="DireccinAlumno" class="col-2 col-form-label">Dirección</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-home"></i>
+                    </div>
+                    <input id="DireccinAlumno"  placeholder="Ingrese su direccion" required="required" type="text" class="form-control here" ng-model="Alumno.ALUMNO_DIRECCION">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Numerotelefono" class="col-2 col-form-label">Teléfono</label>
+            <div class="col-3">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <input id="Numerotelefono" placeholder="Ingrese su número"  required="required" type="tel" class="form-control here" ng-model="Alumno.ALUMNO_TELEFONO">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="curso" class="col-2 col-form-label">Cursos</label>
+            <div class="col-4">
+                <select id="curso" class="custom-select" ng-model="curso" ng-options="c.CURSO_NOMBRE for c in Cursos" ></select>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="jornada" class="col-2 col-form-label">Jornada</label>
+            <div class="col-4">
+                <select id="jornada" class="custom-select" ng-model="jornada" ng-options="j.JORNADA_NOMBRE for j in Jornadas"></select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="horario" class="col-2 col-form-label">Horario</label>
+            <div class="col-4">
+                <select id="horario" class="custom-select" ng-model="horario" ng-options="h.HORARIO_HORARIO for h in Horarios"></select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="offset-3 col-4">
+                <input type="submit" class="btn btn-success" value="Inscribir">
+            </div>
+        </div>
+    </section>
+</form>

@@ -1,0 +1,68 @@
+<form ng-hide="Fmensualiades">
+    <H1 class="display-4 font-weight-bold"  align="center"> Mensualiades </H1>
+
+    <section class="container">
+        <form>
+            <div class="form-group row form-inline">
+                <label for="codigo" class="col-2 col-form-label">Ingresar código</label>
+                <div class="col-4">
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-edit"></i>
+                        </div>
+                        <input id="codigo" name="codigo" type="text" ng-model="alumnoid" required="required" class="form-control here">
+                    </div>
+                </div>
+                <div class="offset-1">
+                    <button name="submit" ng-click="BuscarPorCodigoAlum(alumnoid)" type="submit" class="btn btn-success">Buscar</button>
+                </div>
+            </div>
+
+
+
+            <!-- DataTables Example -->
+            <div class="card mb-3 card text-center">
+                <div class="card-header" align="center" ng-show="EncontroReslutado">
+                    <i class="fas fa-user"></i>
+                    Informacion de Alumno </div>
+
+                <div class="card-header" align="center" ng-show="!EncontroReslutado">
+                    <i class="fas fa-user"></i>
+                    No se encuetra al alumno verifique su codigo</div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
+                            <thead>
+                            <tr>
+                                <th>Codigo</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th  ng-repeat="res in BuscarMensualidadesResult">{{res.MES_NOMBRE}}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr  class="col-5" ng-repeat="resulcodigo in BuscarPorCodigoAlumRsult">
+                                <td>{{resulcodigo.ALUMNO_ID}}</td>
+                                <td>{{resulcodigo.ALUMNO_NOMBRE1}} {{resulcodigo.ALUMNO_NOMBRE2}} {{resulcodigo.ALUMNO_NOMBRE3}}</td>
+                                <td>{{ resulcodigo.ALUMNO_APELLIDO1}} {{ resulcodigo.ALUMNO_APELLIDO2}} {{ resulcodigo.ALUMNO_APELLIDO3}} </td>
+                                <td ng-repeat="res2 in BuscarMensualidadesResult">{{res2.MENSUALIDAD_CANCELADO}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="pago" class="col-2 col-form-label">Cancelar Mes</label>
+                <div class="col-2">
+                    <select id="pago" class="custom-select" ng-model="mes" ng-options="c.MES_NOMBRE for c in MesesAnio" ></select>
+                </div>
+                <div class="offset-lg-0">
+                    <button name="submit" type="submit" ng-click="InsertaMensaualidad(mes.MES_ID,alumnoid)" class="btn btn-danger">Pagar</button>
+                </div>
+            </div>
+
+        </form>
+    </section>
+</form>

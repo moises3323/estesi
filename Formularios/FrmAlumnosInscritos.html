@@ -1,0 +1,68 @@
+<form ng-hide="Falumnosinscritos" ng-submit="AlumnosInscritos(curso.CURSO_ID,jornada.JORNADA_ID,horario.HORARIO_ID)">
+    <H1 class="display-4 font-weight-bold"  align="center"> Alumnos Inscritos </H1>
+    <section class="container">
+        <div class="form-group row">
+            <label for="curso" class="col-2 col-form-label">Curso</label>
+            <div class="col-3">
+                <select id="curso" class="custom-select" ng-model="curso" ng-options="c.CURSO_NOMBRE for c in Cursos" ></select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="jornada" class="col-2 col-form-label">Jornada</label>
+            <div class="col-3">
+                <select id="jornada" class="custom-select" ng-model="jornada" ng-options="j.JORNADA_NOMBRE for j in Jornadas"></select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="horario" class="col-2 col-form-label">Horario</label>
+            <div class="col-3">
+                <select id="horario" class="custom-select" ng-model="horario" ng-options="h.HORARIO_HORARIO for h in Horarios"></select>
+            </div>
+            <div class="offset-lg-1">
+                <input name="submit" type="submit" class="btn btn-success" value="Listar">
+            </div>
+        </div>
+
+
+
+        <!-- DataTables Example -->
+        <div class="card mb-3 card text-center">
+            <div class="card-header" align="center">
+                <i class="fas fa-user"></i>
+                Informacion del Alumno</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Curso</th>
+                            <th>Horario</th>
+                            <th>Dirección</th>
+                            <th>Teléfono</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="Resultado in AlumnosInscritorResult">
+                            <td >{{Resultado.ALUMNO_ID}}</td>
+                            <td>{{Resultado.ALUMNO_NOMBRE1}}</td>
+                            <td>{{Resultado.ALUMNO_APELLIDO1}}</td>
+                            <td>{{Resultado.CURSO_NOMBRE}}</td>
+                            <td>{{Resultado.HORARIO_HORARIO}}</td>
+                            <td>{{Resultado.ALUMNO_DIRECCION}}</td>
+                            <td>{{Resultado.ALUMNO_TELEFONO}}</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+</form>

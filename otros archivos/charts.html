@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<body style="background-color:#BDBDBD">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inscripciones</title>
+</head>
+<body>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<form>
+    <H1 class="display-1"  align="center"> INSCRIPCIONES </H1>
+    <section class="container">
+        <div class="form-group row ">
+
+            <label for="nombres" class="col-2 col-form-label">Nombres</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                    <input id="nombres" name="nombres" placeholder="Ingrese su nombre" type="text" required="required" class="form-control here">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="apellidos" class="col-2 col-form-label">Apellidos</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <input id="apellidos" name="apellidos" placeholder="Ingrese sus apellidos" type="text" class="form-control here">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="fechanacimiento" class="col-2 col-form-label">Fecha de Nacimiento</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input id="fechanacimiento" name="fechanacimiento" placeholder="Ingrese su fecha de nacimiento" type="date" class="form-control here">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="curso" class="col-2 col-form-label">Cursos</label>
+            <div class="col-3">
+                <select id="curso" name="curso" class="custom-select">
+                    <option value="tec_operador">Técnico Operador</option>
+                    <option value="tec_progra">Técnico Programador</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="direccion" class="col-2 col-form-label">Dirección</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-home"></i>
+                    </div>
+                    <input id="direccion" name="direccion" placeholder="Ingrese su direccion" type="text" class="form-control here">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="telefono" class="col-2 col-form-label">Teléfono</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <input id="telefono" name="telefono" placeholder="Ingrese su número" type="text" class="form-control here">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="horario" class="col-2 col-form-label">Horario</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-vcard-o"></i>
+                    </div>
+                    <input id="horario" name="horario" placeholder="Ingrese su horario" type="text" class="form-control here">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="offset-5 col-10">
+                <button name="submit" type="submit" class="btn btn-primary">Aceptar</button>
+            </div>
+        </div>
+</form>
+</section>
+</body>
+</html>

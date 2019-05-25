@@ -1,0 +1,80 @@
+<form ng-hide="Fnotas">
+    <H1 class="display-4 font-weight-bold"  align="center"> Notas </H1>
+    <section class="container ">
+        <div class="form-group row ">
+            <label for="curso" class="col-2 col-form-label">Curso</label>
+            <div class="col-3">
+                <select id="curso" class="custom-select" ng-model="curso" ng-options="c.CURSO_NOMBRE for c in Cursos" ></select>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="horario" class="col-2 col-form-label">Horario</label>
+            <div class="col-3">
+                <select id="horario" class="custom-select" ng-model="horario" ng-options="h.HORARIO_HORARIO for h in Horarios"></select>
+            </div>
+            <div class="offset-lg-0">
+                <button name="submit" ng-click="ListaAsignaNotas(curso.CURSO_ID,horario.HORARIO_ID)" class="btn btn-primary">Listar</button>
+            </div>
+        </div>
+
+
+        <div class="form-group row form-inline">
+            <label for="alumno" class="col-1 col-form-label">Alumno</label>
+            <div class="col-2">
+                <select id="alumno" class="custom-select" ng-model="Lalumno" ng-options='LAN as (LAN.ALUMNO_NOMBRE1+" "+LAN.ALUMNO_APELLIDO1) for LAN in ListaAlumnosAsisgaNota'></select>
+            </div>
+            <label for="bimestre" class="col-1 col-form-label">Bimestre</label>
+            <div class="col-2">
+                <select id="bimestre" class="custom-select" ng-model="bimestre" ng-options="b.BIMESTRE_BIMESTRENOMBRE for b in Bimestres"></select>
+            </div>
+            <input type="text" ng-model="calificacion" class="form-control offset-lg-1" placeholder="Ingrese la nota">
+            <div class="offset-lg-0">
+                <button name="submit" ng-click="InsertarNotas(bimestre.BIMESTRE_ID,Lalumno.ALUMNO_ID,calificacion)" class="btn btn-primary offset-sm-1">Agregar</button>
+            </div>
+        </div>
+
+        <!-- DataTables Example -->
+        <div class="card mb-3 card text-center">
+            <div class="card-header" align="center">
+                <i class="fas fa-user"></i>
+                Alumnos con Notas Asignadas</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Curso</th>
+                            <th>Jornada</th>
+                            <th>Horario</th>
+                            <th>Bimestre</th>
+                            <th>Nota</th>
+                        </tr>
+                        </thead>
+                        <tr ng-repeat="AlumnoNota in ListaDeNotas">
+                            <td>{{AlumnoNota.ALUMNO_ID}}</td>
+                            <td>{{AlumnoNota.ALUMNO_NOMBRE1}} {{AlumnoNota.ALUMNO_NOMBRE2}} {{AlumnoNota.ALUMNO_NOMBRE3}}</td>
+                            <td>{{AlumnoNota.ALUMNO_APELLIDO1}} {{AlumnoNota.ALUMNO_APELLIDO2}} {{AlumnoNota.ALUMNO_APELLIDO3}}</td>
+                            <td>{{AlumnoNota.CURSO_NOMBRE}}</td>
+                            <td>{{AlumnoNota.JORNADA_NOMBRE}}</td>
+                            <td>{{AlumnoNota.HORARIO_HORARIO}}</td>
+                            <td>{{AlumnoNota.BIMESTRE_BIMESTRENOMBRE}}</td>
+                            <td>{{AlumnoNota.CALIFICACION}}</td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </section>
+</form>
